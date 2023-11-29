@@ -3,9 +3,9 @@ GX = 4
 GY = 6
 class CustomButton:
     def __init__(self,root,text,posx,posy):
-        self.root = tk.Button(root.root,text=text,font = ('Arial',20))
+        self.root = tk.Button(root.root,text=text,font = ('Arial',15))
         self.root.bind("<Button-1>",lambda s : root.ButtonHandler(s,text))
-        self.root.place(relx=posx/GX,rely=posy/GY,relh = 1/GY,relw = 1/GX)
+        self.root.place(relx=posx/GX,rely=posy/GY,relh = 0.5/GY,relw = 0.5/GX)
         root.Button.append(self)
     
 #Calculator
@@ -101,7 +101,7 @@ class Calculator:
         CustomButton(self,"^",3,1)
         CustomButton(self,"Enter",2,5)
 
-        self.Label = tk.Label(self.root)
+        self.Label = tk.Label(self.root,font = ("Arial",20))
         self.Label.place(relx = 0,rely=0,relh = 1/GY,relw = 1)
         self.Label.config(text = "0")
 
